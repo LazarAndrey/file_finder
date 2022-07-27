@@ -3,7 +3,7 @@
 Search for files(*txt, *dcox, *xlsx, *pdf, *json, *csv) by content(keyword) in the selected directory.    
 The program was developed for Windows 10 x64.    
 For GUI I used PyQt5.   
-*07/27/2022*:   
+*07/27/2022 (M/D/Y)*:   
 Excel file parsing not working.    
 *In future:*   
 Remake the program multi-threaded.  
