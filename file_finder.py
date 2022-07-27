@@ -6,6 +6,7 @@ import csv
 import json
 import PyPDF2
 import docx
+from threading import Thread
 
 
 class MainWindow(QtWidgets.QMainWindow, design.Ui_MainWindow):
