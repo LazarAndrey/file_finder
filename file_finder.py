@@ -6,6 +6,7 @@ import csv
 import json
 import PyPDF2
 import docx
+import openpyxl
 from threading import Thread
 
 
@@ -118,8 +119,13 @@ class MainWindow(QtWidgets.QMainWindow, design.Ui_MainWindow):
                     return self.result.append(file_full_name)
 
     def read_xlsx(self, file_full_name):
-        self.listWidget.addItem("Until i can work with excel :(")
-        self.listWidget.repaint()
+        book = openpyxl.open(file_full_name, read_only=True)
+        sheet = book.active
+        for row in sheet.iter_rows():
+            for cell in row:
+                if cell.value != None:
+                    if self.keyword in str(cell.value):
+                        return self.result.append(file_full_name)
 
     def read_docx(self, file_full_name):
         doc = docx.Document(file_full_name)
